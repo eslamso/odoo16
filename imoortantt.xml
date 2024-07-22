@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+<!--    <template id="weblearns_layout">-->
+<!--        <div class="header">-->
+<!--            <div class="row" style="report_header_style">-->
+<!--                <h1>custom header</h1>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="article o_report_layout_standard">-->
+<!--        <t t-out="0" />-->
+<!--        </div>-->
+<!--        <div class="footer o_standard_footer">-->
+<!--            <div class="row" >-->
+<!--                <h1>custom header</h1>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </template>-->
+    <template id="sale_report_inherit_template" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@class='oe_structure']" position="replace">
+            <div class="oe_structure" style="position:absolute;top:300px"/>
+
+        </xpath>
+    <xpath expr="//div[@t-field='doc.partner_id']" position="replace">
+        <link href="/inherit_pdf_report/static/src/css/style.css" rel="stylesheet"/>
+        <div class="customerrr">
+        <h1 class="text-end customerr">العميل</h1>
+        <div t-field="doc.partner_id" class="text-end testt"
+                t-options='{"widget": "contact", "fields": ["name","address"], "no_marker": True,"phone_icons":False}' />
+<!--            <p class="text-end testt" t-if="doc.partner_id.vat"><t t-out="doc.company_id.account_fiscal_country_id.vat_label or 'Tax ID'"/>: <span t-field="doc.partner_id.vat"/></p>-->
+        </div>
+
+    </xpath>
+
+        <xpath expr="//p[1]" position="replace" class="text-end testt">
+            <p class="text-end testt" t-if="doc.partner_id.vat">رقم السجل الضريبي:<span t-field="doc.partner_id.vat"/></p>
+            <div class="text-end testt">
+
+            <h2 >
+             <span t-field="doc.name"/>
+            <span t-if="env.context.get('proforma', False) or is_pro_forma">Pro-Forma Invoice # </span>
+                <span t-elif="doc.state in ['draft','sent']"># عرض السعر  </span>
+                <span t-else="">Order # </span>
+
+            </h2>
+                <img t-att-src="'/report/barcode/Code128/%s'%(doc.name)" width="300" height="100" alt="Barcode"/>
+
+                </div>
+        </xpath>
+
+        <xpath expr="//h2[@class='mt-4']" position="replace" class="text-end">
+            <div class="mt-4">
+
+                <img t-att-src="'/report/barcode/QR/%s'%(doc.name)" width="300" height="300" alt="Barcode"/>
+            </div>
+        </xpath>
+<!--         <xpath expr="//h2[@class='mt-4']" position="before">-->
+<!--           -->
+<!--        </xpath>-->
+        <xpath expr="//p[1]" position="replace" class="text-end testt">
+            <p class="text-end testt" t-if="doc.partner_id.vat">رقم السجل الضريبي:<span t-field="doc.partner_id.vat"/></p>
+        </xpath>
+        <xpath expr="//table[@class='table table-sm o_main_table table-borderless mt-4']" position="replace">
+
+            <link href="/inherit_pdf_report/static/src/css/tableStyle.css" rel="stylesheet"/>
+            <table class="table table-sm o_main_table table-borderless mt-4 content-table">
+                <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+<!--                <thead style="display: table-row-group">-->
+<!--                    <tr>-->
+<!--                        <th name="th_description" class="text-start">Description</th>-->
+<!--                        <th name="th_image" class="text-center"><strong>Picture</strong></th>-->
+<!--                        <th name="th_quantity" class="text-end">Quantity</th>-->
+<!--                        <th name="th_priceunit" class="text-end">Unit Price</th>-->
+<!--                        <th name="th_discount" t-if="display_discount" class="text-end">-->
+<!--                            <span>Disc.%</span>-->
+<!--                        </th>-->
+<!--                        <th name="th_taxes" class="text-end">Taxes</th>-->
+<!--                        <th name="th_subtotal" class="text-end">-->
+<!--                            <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>-->
+<!--                            <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>-->
+<!--                        </th>-->
+<!--                    </tr>-->
+<!--                </thead>-->
+                <thead style="display: table-row-group">
+                    <tr>
+                        <th name="th_subtotal" class="text-end">
+                            <span groups="account.group_show_line_subtotals_tax_excluded">المبلغ</span>
+                            <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>
+                        </th>
+                        <th name="th_discount" t-if="display_discount" class="text-end">
+                            <span>Disc.%</span>
+                        </th>
+                        <th name="th_taxes" class="text-end">الضرئب</th>
+                        <th name="th_priceunit" class="text-end">سعر الحبة</th>
+                        <th name="th_quantity" class="text-end">الكمية</th>
+                        <th name="th_description" class="text-end">الوصف</th>
+                        <th name="th_picture" class="text-center">المنتج</th>
+                    </tr>
+                </thead>
+                <tbody class="sale_tbody">
+
+                    <t t-set="current_subtotal" t-value="0"/>
+
+                    <t t-foreach="lines_to_report" t-as="line">
+
+                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+
+                        <tr t-att-class="'bg-200 fw-bold o_line_section' if line.display_type == 'line_section' else 'fst-italic o_line_note' if line.display_type == 'line_note' else ''">
+                            <t t-if="not line.display_type">
+                                <td t-if="not line.is_downpayment" name="td_subtotal" class="text-end o_price_total">
+                                    <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                    <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                                 </td>
+                                 <td name="td_taxes" class="text-end">
+                                    <span t-out="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
+                                </td>
+                                <td t-if="display_discount" class="text-end">
+                                    <span t-field="line.discount"/>
+                                </td>
+                                <td name="td_priceunit" class="text-end">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_quantity" class="text-end">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom"/>
+                                </td>
+                                <td name="td_name" class="text-end"><span t-field="line.name"/></td>
+                                <td class="text-center">
+                                    <span><img t-att-src="image_data_uri(line.product_id.image_128)" alt="not Found" /></span>
+                                </td>
+                            </t>
+                            <t t-elif="line.display_type == 'line_section'">
+                                <td name="td_section_line" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                                <t t-set="current_section" t-value="line"/>
+                                <t t-set="current_subtotal" t-value="0"/>
+                            </t>
+                            <t t-elif="line.display_type == 'line_note'">
+                                <td name="td_note_line" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                            </t>
+                        </tr>
+
+                        <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section') and not line.is_downpayment">
+                            <tr class="is-subtotal text-end">
+                                <td name="td_section_subtotal" colspan="99">
+                                    <strong class="mr16">Subtotal</strong>
+                                    <span
+                                        t-out="current_subtotal"
+                                        t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'
+                                    />
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                </tbody>
+            </table>
+
+<!--       <style>-->
+
+<!--                thead {-->
+<!--    background-color: #95A5A6;-->
+<!--    font-size: 14px;-->
+<!--    text-transform: uppercase;-->
+<!--    letter-spacing: 0.03em;-->
+<!--  }-->
+<!--  td {-->
+<!--    background-color: #ffffff;-->
+<!--    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);-->
+<!--  }-->
+<!--            </style>-->
+
+    </xpath>
+        <xpath expr="//div[@class='clearfix']" position="after">
+            <link href="/inherit_pdf_report/static/src/css/note.css" rel="stylesheet"/>
+
+                    <div class="notess text-end">
+                    <ul>
+                        <li>ملاحظات</li>
+                        <li>شروط الدفع 100% مقدم</li>
+                      <li>الدفع نقدا او بشيك او بحوالة بنكية </li>
+                        <li>الحساب البنكي :48700001006086189427</li>
+                         <li>SA9780000487608016189427:رقم الايبان </li>
+                    </ul>
+                    </div>
+
+
+        </xpath>
+
+    </template>
+
+</odoo>

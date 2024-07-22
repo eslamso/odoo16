@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--web.extrenal_layout_اسم ال layout-->
+    <template id="sale_report_header_template" inherit_id="web.external_layout_standard">
+
+            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
+
+
+
+<!--               <div t-attf-class="header o_company_#{company.id}_layout tesst" t-att-style="report_header_style">-->
+<!--                   <link href="/inherit_pdf_report/static/src/css/header.css" rel="stylesheet"/>-->
+<!--            <div class="o_boxed_header tesst">-->
+<!--            <div class="row mb8">-->
+<!--                <div class="col-6 eslam">-->
+<!--                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>-->
+<!--                </div>-->
+<!--                <div class="col-6 text-start mb4">-->
+<!--                    <div class="mt0 h4" t-field="company.report_header"/>-->
+<!--                    <div name="company_address" class="float-end mb4">-->
+<!--                        <h1>company info</h1>-->
+
+<!--                        <ul class="list-unstyled">-->
+<!--                            <li t-if="company.is_company_details_empty"><t t-esc="company.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/></li>-->
+<!--                            <li t-else=""><t t-esc="company.company_details"/></li>-->
+<!--                            <li t-if="forced_vat">-->
+<!--                                <t t-esc="company.country_id.vat_label or 'Tax ID'"/>:-->
+<!--                                <span t-esc="forced_vat"/>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    custom header -->
+<!--                <div class="header">-->
+<!--                   <link href="/inherit_pdf_report/static/src/css/header.css" rel="stylesheet"/>-->
+<!--            <div class="o_boxed_header" style="border:none ;background-color:black ;">-->
+<!--            <div class="teset">-->
+<!--                <div class="twoo">-->
+<!--                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>-->
+<!--                </div>-->
+<!--                <div class="onee">-->
+<!--                    <div t-field="company.report_header"/>-->
+<!--                    <div name="company_address" >-->
+<!--                        <h1>company info</h1>-->
+
+<!--                        <ul class="list-unstyled">-->
+<!--                            <li t-if="company.is_company_details_empty"><t t-esc="company.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/></li>-->
+<!--                            <li t-else=""><t t-esc="company.company_details"/></li>-->
+<!--                            <li t-if="forced_vat">-->
+<!--                                <t t-esc="company.country_id.vat_label or 'Tax ID'"/>:-->
+<!--                                <span t-esc="forced_vat"/>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--  <div t-attf-class="header o_company_#{company.id}_layout tesst" t-att-style="report_header_style">-->
+<!--                   <link href="/inherit_pdf_report/static/src/css/header.css" rel="stylesheet"/>-->
+<!--            <div class="o_boxed_header tesst" style="border:none;">-->
+<!--            <div class="row mb8">-->
+<!--                <div class="col-6 eslam">-->
+<!--                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>-->
+<!--                </div>-->
+<!--                <div class="col-6 text-start mb4">-->
+<!--                    <div class="mt0 h4" t-field="company.report_header"/>-->
+<!--                    <div name="company_address" class="float-end mb4">-->
+<!--                        <h1>company info</h1>-->
+
+<!--                        <ul class="list-unstyled">-->
+<!--                            <li t-if="company.is_company_details_empty"><t t-esc="company.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/></li>-->
+<!--                            <li t-else=""><t t-esc="company.company_details"/></li>-->
+<!--                            <li t-if="forced_vat">-->
+<!--                                <t t-esc="company.country_id.vat_label or 'Tax ID'"/>:-->
+<!--                                <span t-esc="forced_vat"/>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            </div>-->
+<!--       </div>-->
+     </xpath>
+    </template>
+</odoo>

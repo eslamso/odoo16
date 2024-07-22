@@ -1,0 +1,5 @@
+<template id="view_sale_order_form_inherit" inherit_id="sale.view_order_form">
+    <xpath expr="//form/header" position="inside">
+        <button id="generate_pdf_button" type="button" class="btn btn-primary">Generate PDF</button>
+    </xpath>
+</template>

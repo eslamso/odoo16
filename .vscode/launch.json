@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Odoo",
+      "type": "python",
+      "request": "launch",
+      "stopOnEntry": false,
+      "console": "integratedTerminal",
+      "program": "${workspaceRoot}/odoo/odoo-bin",
+      "args": [
+        "--config=/home/my/odoo/conf/odoo.conf",
+        "-u",
+        "invoice_pdf"
+
+        // "--database=db_1_name,db_2_name",
+        // "--update=module1_name,module2_name"
+      ]
+    }
+  ]
+}

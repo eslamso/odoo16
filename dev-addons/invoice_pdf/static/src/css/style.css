@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.invoice-container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #000;
+}
+
+.invoice-header,
+.invoice-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000;
+}
+
+.invoice-title h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.invoice-title p,
+.company-info p {
+  margin: 5px 0;
+}
+
+.client-info,
+.invoice-details,
+.terms-conditions {
+  margin: 20px 0;
+}
+
+.client-info p,
+.terms-conditions ul li {
+  margin: 5px 0;
+}
+
+.invoice-details h2,
+.terms-conditions h2 {
+  margin-bottom: 10px;
+}
+
+.invoice-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invoice-details th,
+.invoice-details td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: left;
+}
+
+.invoice-details th {
+  background-color: #f5f5f5;
+}
+
+.invoice-details td.text-right {
+  text-align: right;
+}
+
+.terms-conditions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.terms-conditions ul li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.terms-conditions ul li:before {
+  content: "• ";
+}
+
+.invoice-footer img {
+  width: 200px;
+}

@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+h1 {
+    color:#1b84bd;
+    font-family: "Anta", sans-serif;
+}
+.eslam {
+margin-bottom:20px;
+}
+.tesst {
+
+    padding-bottom:0px;
+    font-family: "Anta", sans-serif;
+
+}
+
+/*
+h1 {
+    color:red;
+    font-family: "Anta", sans-serif;
+}
+.twoo{
+align-items:center;
+margin:10px;
+width:100%;
+background-color:red;
+}
+.tesst {
+
+    display:flex;
+    align-content:center;
+    jsutifiy-content;center;
+
+}
+
+.onee {
+align-items:center;
+margin:10px;
+width:100%;
+background-color:blue;
+}
+*/

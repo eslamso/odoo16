@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+/*
+     thead {
+    background-color: #95A5A6;
+    font-family: "Cairo", sans-serif;
+    color: #6C7A89;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  td {
+    font-family: "Cairo", sans-serif;
+    background-color: #ffffff;
+    font-size: 16px;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+  }
+
+*/
+
+
+* {
+    /* Change your font family */
+    font-family: "Cairo", sans-serif;
+}
+table {
+    page-break-inside:auto;
+
+}
+tr {
+    page-break-inside:avoid;
+    page-break-after:auto;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+   /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+}
+
+.content-table thead tr {
+    background-color: #f3f3f3;
+    color: blue;
+    text-align: left;
+    font-weight: bold;
+
+}
+.table thead tr{
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+
+
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Register the custom invoice report -->
+        <report
+            id="action_report_custom_invoice"
+            string="Custom Invoice"
+            model="account.move"
+            report_type="qweb-pdf"
+            name="invoice_pdf.custom_report_invoice"
+            file="invoice_pdf.custom_report_invoice"
+            attachment_use="False"
+        />
+    </data>
+</odoo>

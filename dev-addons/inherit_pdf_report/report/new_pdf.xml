@@ -1,0 +1,6 @@
+<template id="assets_backend" name="Custom Backend Assets" inherit_id="web.assets_backend">
+    <xpath expr="." position="inside">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    </xpath>
+</template>
+
