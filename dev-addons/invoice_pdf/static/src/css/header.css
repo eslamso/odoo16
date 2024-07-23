@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Anta&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   border-bottom: 0px solid #333;
@@ -19,6 +19,27 @@
 .header a {
   color: #333;
   text-decoration: none;
+} */
+
+.parent {
+  width: 100%;
+}
+.child {
+  float: left;
+  width: 50%;
+}
+.red {
+  background-color: red;
+  margin-left: 50%;
+  height: 100px;
+}
+.yellow {
+  margin-left: 50%;
+  height: 100px;
+  background-color: yellow;
+}
+.block {
+  display: block;
 }
 
 /*
