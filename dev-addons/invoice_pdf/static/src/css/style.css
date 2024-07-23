@@ -1,88 +1,95 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
-
+/* styles.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #f4f4f4;
 }
 
-.invoice-container {
-  width: 800px;
-  margin: 0 auto;
+.invoice {
+  max-width: 800px;
+  margin: 20px auto;
   padding: 20px;
-  border: 1px solid #000;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.invoice-header,
-.invoice-footer {
+.header,
+.main,
+.footer {
+  margin-bottom: 20px;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
 }
 
-.invoice-title h1 {
+.header h1 {
   margin: 0;
-  font-size: 36px;
+  font-size: 50px;
 }
 
-.invoice-title p,
-.company-info p {
-  margin: 5px 0;
+.header p {
+  margin: 0;
 }
 
-.client-info,
-.invoice-details,
-.terms-conditions {
-  margin: 20px 0;
+.header a {
+  color: #333;
+  text-decoration: none;
 }
 
-.client-info p,
-.terms-conditions ul li {
-  margin: 5px 0;
+.invoice-info {
+  text-align: right;
 }
 
-.invoice-details h2,
-.terms-conditions h2 {
-  margin-bottom: 10px;
+.invoice-info h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
 }
 
-.invoice-details table {
+.main .billing-info,
+.main .invoice-details,
+.main .terms {
+  margin-bottom: 20px;
+}
+
+.main .invoice-details table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.invoice-details th,
-.invoice-details td {
-  border: 1px solid #000;
+.main .invoice-details table,
+th,
+td {
+  border: 1px solid #333;
+}
+
+.main .invoice-details th,
+.main .invoice-details td {
   padding: 10px;
   text-align: left;
 }
 
-.invoice-details th {
-  background-color: #f5f5f5;
+.main .invoice-details th {
+  background: #333;
+  color: white;
 }
 
-.invoice-details td.text-right {
-  text-align: right;
+.main .invoice-details tfoot {
+  font-weight: bold;
 }
 
-.terms-conditions ul {
-  list-style: none;
-  padding: 0;
+.footer {
+  text-align: center;
+  border-top: 2px solid #333;
+  padding-top: 10px;
 }
 
-.terms-conditions ul li {
-  padding-left: 1em;
-  text-indent: -1em;
-}
-
-.terms-conditions ul li:before {
-  content: "• ";
-}
-
-.invoice-footer img {
-  width: 200px;
+.footer p {
+  margin: 0;
 }
