@@ -11,7 +11,8 @@
                     <div>
                         <div class="left-section float-left child">
                             <h1 class="header-invoice">INVOICE</h1>
-                            <span class="block">Invoice #</span>
+                            <span class="block">Invoice #: <span class="m-0" t-field="o.name"/>
+                            </span>
                             <span class="block">Date: <span class="m-0" t-field="o.invoice_date"/>
                             </span>
                         </div>
