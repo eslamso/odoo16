@@ -50,7 +50,7 @@ body {
 }
 .invoice-table th:first-child,
 .invoice-table td:first-child {
-  border-left: none; /* Remove the left border of the first column */
+  border-left: 0px solid white;
 }
 
 .invoice-table .left {
@@ -70,5 +70,5 @@ body {
 
 .invoice-table td:last-child {
   font-weight: normal;
-  border-right: none; /* Remove the right border of the last column */
+  border-right: 0px solid white; /* Remove the right border of the last column */
 }
