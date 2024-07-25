@@ -1,0 +1,7 @@
+.idea
+.vscode
+conf
+/conf
+/odoo.conf
+imoortantt.xml
+custom_invoice_pdf.xml
