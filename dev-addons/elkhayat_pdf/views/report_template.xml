@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data><!-- Register the custom invoice report -->
+        <report id="action_report_custom_invoice" string="elkhayat_pdf" model="account.move" report_type="qweb-pdf" name="elkhayat_pdf.elkhayat_pdf_report" file="elkhayat_pdf.elkhayat_pdf_report" attachment_use="False"/>
+    </data>
+</odoo>

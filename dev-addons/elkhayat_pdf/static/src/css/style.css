@@ -1,0 +1,95 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.invoice {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header,
+.main,
+.footer {
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 50px;
+}
+
+.header p {
+  margin: 0;
+}
+
+.header a {
+  color: #333;
+  text-decoration: none;
+}
+
+.invoice-info {
+  text-align: right;
+}
+
+.invoice-info h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.main .billing-info,
+.main .invoice-details,
+.main .terms {
+  margin-bottom: 20px;
+}
+
+.main .invoice-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.main .invoice-details table,
+th,
+td {
+  border: 1px solid #333;
+}
+
+.main .invoice-details th,
+.main .invoice-details td {
+  padding: 10px;
+  text-align: left;
+}
+
+.main .invoice-details th {
+  background: #333;
+  color: white;
+}
+
+.main .invoice-details tfoot {
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  border-top: 2px solid #333;
+  padding-top: 10px;
+}
+
+.footer p {
+  margin: 0;
+}
