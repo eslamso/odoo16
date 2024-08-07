@@ -1,70 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Anta&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:slnt,wght@1,200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
+.header {
+  overflow: hidden; /* To clear floats */
+  /* Ensure full width of the parent container */
 
-/* .header {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 0px solid #333;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  border-bottom: 4px double black;
+  /*padding-left: 50px;*/
+  color: black;
+  font-family: "Cairo", sans-serif;
+  padding-bottom: 15px;
 }
 
-.header span {
-  margin: 0;
-}
-
-.header p {
-  margin: 0;
-}
-
-.header a {
-  color: #333;
-  text-decoration: none;
-} */
-
-.parent {
-  width: 100%;
-}
-.child {
-  float: left;
+.page-number {
+  display: inline-block;
   width: 50%;
+  text-align: end;
 }
-.red {
-  background-color: red;
-  margin-left: 50%;
-  height: 100px;
+
+.company-details {
+  display: inline-block;
+  text-align: end;
+  width: 35%;
+  font-size: 15px;
 }
-.yellow {
-  margin-left: 50%;
-  height: 100px;
-  background-color: yellow;
-}
-.block {
+.company-details strong {
   display: block;
 }
-
-/*
-h1 {
-    color:red;
-    font-family: "Anta", sans-serif;
+.company-logo {
+  display: inline-block;
+  width: 10%;
 }
-.twoo{
-align-items:center;
-margin:10px;
-width:100%;
-background-color:red;
-}
-.tesst {
-
-    display:flex;
-    align-content:center;
-    jsutifiy-content;center;
-
-}
-
-.onee {
-align-items:center;
-margin:10px;
-width:100%;
-background-color:blue;
-}
-*/
+/*-----------------------------------------------------------------------------------*/
+/*page*/
